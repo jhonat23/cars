@@ -1,11 +1,56 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 
-{% block navbar %}
-    {% include "navbar.html" %}
-{% endblock navbar %}
+{% block body %}
+    {{ super() }}
+    <div class="jumbotron">
+        <h1 class="cen">Welcome to ShowCars</h1>
+        <h2 class="cen">A space for cars lovers and seekers of their next colombian car</h2>
+        <div> </div>
+        <p class="cen"><a class="btn btn-primary btn-lg" href="#" role="button">About this app</a></p>
+    </div>
 
-{% block content %}
-    <h1>Welcome to ShowCars!</h1>
-{% endblock content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 id="text">Search for you next dream car</h2> <!-- class="panel-title" -->
+        </div>
+        <div class="panel-body">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="text" type="button">Go!</button>
+                </span>
+                <input type="text" class="form-control" id="text" placeholder="Volkswagen Gol">
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+        <div class="w3-quarter">
+            <img src="/static/images/chevonyx.jpg" alt="Onyx" style="width:100%">
+            <h3>Chevrolet Onyx</h3>
+            <p><a href="">More info</a></p>
+        </div>
+        <div class="w3-quarter">
+            <img src="static/images/mazdacx30.jpg" alt="CX30" style="width:100%">
+            <h3>Mazda CX-30</h3>
+            <p><a href="">More info</a></p>
+        </div>
+        <div class="w3-quarter">
+            <img src="static/images/kiapicanto.jpg" alt="Picanto" style="width:100%">
+            <h3>Kia Picanto</h3>
+            <p><a href="">More info</a></p>
+        </div>
+        <div class="w3-quarter">
+            <img src="static/images/kwid.jpg" alt="Kwid" style="width:100%">
+            <h3>Renault Kwid</h3>
+            <p><a href="">More info</a></p>
+        </div>
+    </div>
+
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock footer %}
+    
+{% endblock body %}
+
 
 
