@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from app.config import Config
 
+
 app = Flask(__name__)
 
 #load config
@@ -16,7 +17,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def main_page():
-    return render_template('index.html')
+    return render_template('index.html', **context)
 
 if __name__ == '__main__':
     app.run(debug=True)

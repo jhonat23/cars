@@ -1,4 +1,3 @@
-from io import BufferedRandom
 from main import db
 
 #models
@@ -19,3 +18,9 @@ class Seller(db.Model):
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
 
+    def __str__(self):
+        return {'name': f'{self.name}'}
+
+db.create_all()
+
+seller_a = Seller(name='Todo_Autos')
