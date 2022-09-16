@@ -1,23 +1,15 @@
-from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
-from app.config import Config
+from flask import render_template
+from app import create_app
+from app.database import start_db
 
+start_db()
 
-app = Flask(__name__)
-
-#load config
-app.config.from_object(Config)
-
-# add bootstrap framework
-bootstrap = Bootstrap(app)
-
-#Create an object to use SQLalchemy features
-db = SQLAlchemy(app)
+app = create_app()
 
 @app.route('/')
 def main_page():
-    return render_template('index.html', **context)
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+

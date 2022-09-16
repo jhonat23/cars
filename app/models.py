@@ -1,26 +1,32 @@
-from main import db
+from sqlalchemy import Column, ForeignKey, Integer, String, Float
+from sqlalchemy.orm import declarative_base, relationship
+
+Base = declarative_base()
 
 #models
-class Car(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    brand = db.Column(db.String(50), nullable=False)
-    model = db.Column(db.Integer, nullable=False)
-    cv = db.Column(db.Integer, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
 
-    seller_id = db.Column(db.Integer, db.ForeginKey('seller.id'), nullable=False)
-    seller = db.relationship('Seller', backref=db.backref('cars', lazy=True))
+class Seller(Base):
+    __tablename__ = 'sellers'
 
-class Seller(db.Model):
-    id = db.Column(db.Integer, prmary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    latitude = db.Column(db.Float)
-    longitude = db.Column(db.Float)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    latitude = Column(Float)
+    longitude = Column(Float)
+
+    cars = relationship('Car', back_populates='seller')
 
     def __str__(self):
         return {'name': f'{self.name}'}
 
-db.create_all()
+class Car(Base):
+    __tablename__ = 'cars'
 
-seller_a = Seller(name='Todo_Autos')
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    brand = Column(String(50), nullable=False)
+    model = Column(Integer, nullable=False)
+    cv = Column(Integer, nullable=False)
+    price = Column(Integer, nullable=False)
+    seller_id = Column(Integer, ForeignKey('sellers.id'))
+
+    seller = relationship('Seller', back_populates='cars')
