@@ -15,8 +15,8 @@ class Seller(Base):
 
     cars = relationship('Car', back_populates='seller')
 
-    def __str__(self):
-        return {'name': f'{self.name}'}
+    def __repr__(self):
+        return f'Seller name: {self.name}, seller id: {self.id}, seller latitude: {self.latitude}, seller longitude: {self.longitude}'
 
 class Car(Base):
     __tablename__ = 'cars'
@@ -30,3 +30,6 @@ class Car(Base):
     seller_id = Column(Integer, ForeignKey('sellers.id'))
 
     seller = relationship('Seller', back_populates='cars')
+
+    def __repr__(self):
+        return f'The car is a {self.name} {self.brand}, model {self.model} with {self.cv} cv, cost: {self.price}'

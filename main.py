@@ -1,8 +1,5 @@
 from flask import render_template
 from app import create_app
-from app.database import start_db
-
-start_db()
 
 app = create_app()
 
@@ -12,4 +9,3 @@ def main_page():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
