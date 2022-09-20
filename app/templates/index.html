@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block body %}
     {{ super() }}
@@ -13,13 +14,19 @@
         <div class="panel-heading">
             <h2 id="text">Search for you next dream car</h2> <!-- class="panel-title" -->
         </div>
-        <div class="panel-body">
+        <!--<div class="panel-body">
             <div class="input-group">
                 <span class="input-group-btn">
                     <button class="btn btn-default" id="text" type="button">Go!</button>
                 </span>
                 <input type="text" class="form-control" id="text" placeholder="Volkswagen Gol">
             </div>
+        </div> -->
+        <div class='cen'>
+            <form action="/car_list" method="GET">
+                {{ form.search_bar }}
+                {{ form.go }}
+            </form>
         </div>
     </div>
 

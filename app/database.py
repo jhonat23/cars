@@ -26,6 +26,6 @@ def get_cars(name: str):
 
 if __name__ == '__main__':
     seller = get_seller('Todo Autos')
-    print(seller)
     cars = get_cars('renault')
+    print(seller)
     cars = [print(car) for car in cars]

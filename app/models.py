@@ -32,4 +32,4 @@ class Car(Base):
     seller = relationship('Seller', back_populates='cars')
 
     def __repr__(self):
-        return f'The car is a {self.name} {self.brand}, model {self.model} with {self.cv} cv, cost: {self.price}'
+        return f'The car is a {self.name} {self.brand}, model {self.model} with {self.cv} cv, cost: {self.price}, seller: {self.seller_id}'
