@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
-from models import Base, Seller, Car
+from app.models import Base, Seller, Car
 from sqlalchemy.orm import Session
-import data as data
+import app.data as data
 
 engine = create_engine(f'mysql+pymysql://{data.USERNAME}:{data.PASSWORD}@{data.HOST}/{data.DBNAME}', echo=True, future=True)
 
@@ -23,9 +23,20 @@ def get_cars(name: str):
             return result
         else:
             return False
+    
+def get_all_cars():
+    with Session(engine) as session:
+        result = session.query(Car).all()
+        if result:
+            return result
+        else:
+            return False
 
 if __name__ == '__main__':
     seller = get_seller('Todo Autos')
-    cars = get_cars('renault')
+    cars = get_cars('kia')
     print(seller)
     cars = [print(car) for car in cars]
+
+    # all = get_all_cars()
+    # all = [print(car) for car in all]
