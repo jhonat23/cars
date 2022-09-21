@@ -17,15 +17,20 @@ def main_page():
         'form': form
     }
     if form.validate_on_submit():
-        car_name = form.search_bar.data
-        cars = get_cars(str(car_name))
-        context_2 ={
-            'cars': cars
-        }
-        
-        return render_template('carfilter.html', **context_2)
+        return redirect(url_for('search'))
 
     return render_template('index.html', **context)
+
+@app.route('/search', methods=['GET', 'POST'])
+def search_cars():    
+    form = SearchForm()
+    car = form.search_bar.data
+    cars = get_cars(car)
+    context = {
+        'form': form,
+        'cars': cars
+    }
+    return render_template('carfilter.html', **context)
 
 @app.route('/car_list')
 def carlist():
