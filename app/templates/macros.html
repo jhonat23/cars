@@ -5,3 +5,15 @@
     </li>
 
 {% endmacro %}
+
+{% macro render_search_form(form) %}
+
+    <h1 class='cen'>Please introduce a valid brand</h1>
+    <div class='cen'>
+        <form action="{{ url_for('search_cars') }}" method="POST">
+                {{ form.search_bar }}
+                {{ form.go }}
+        </form>
+    </div>
+    
+{% endmacro %}

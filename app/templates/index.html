@@ -12,7 +12,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 id="text">Search for you next dream car</h2> <!-- class="panel-title" -->
+            <h2 id="text">Search for you next dream car by brand</h2> <!-- class="panel-title" -->
         </div>
         <!--<div class="panel-body">
             <div class="input-group">
@@ -23,7 +23,7 @@
             </div>
         </div> -->
         <div class='cen'>
-            <form action="/search" method="GET">
+            <form action="{{ url_for('search_cars') }}" method="POST">
                 {{ form.search_bar }}
                 {{ form.go }}
             </form>

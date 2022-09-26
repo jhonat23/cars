@@ -4,11 +4,15 @@
 {% block body %}
     {{ super() }}
 
-    <ul class='list-group-item'>
-        {% for car in cars %}
-            {{ macros.render_car(car) }}
-        {% endfor %}
-    </ul>
+    {% if cars %}
+        <ul class='list-group-item'>
+            {% for car in cars %}
+                {{ macros.render_car(car) }}
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ macros.render_search_form(form) }}
+    {% endif %}
 
     {% block footer %}
         {% include "footer.html" %}
