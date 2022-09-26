@@ -4,6 +4,9 @@
 {% block body %}
     {{ super() }}
 
+    <h2 class='cen' id="text">Search for you next dream car by brand</h2>
+    {{ macros.render_search_form(form) }}
+
     <ul class='list-group-item'>
         {% for car in cars %}
             {{ macros.render_car(car) }}

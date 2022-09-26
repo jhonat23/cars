@@ -36,9 +36,11 @@ def search_cars():
 
 @app.route('/car_list')
 def carlist():
+    form = SearchForm()
     cars = get_all_cars()
     context = {
-        'cars': cars
+        'cars': cars,
+        'form': form
     }
     return render_template('carlist.html', **context)
 
