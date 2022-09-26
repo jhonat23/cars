@@ -16,13 +16,14 @@ def get_seller(name: str):
         else:
             return False
 
+
 def get_cars(name: str):
     with Session(engine) as session:
-        result = session.query(Car).filter_by(name=name).all()
+        result = session.query(Car).populate_existing().filter_by(name=name).all()
         if result:
             return result
         else:
-            return False
+            return 'oh lala'
     
 def get_all_cars():
     with Session(engine) as session:

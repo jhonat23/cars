@@ -1,4 +1,4 @@
-from flask import render_template, redirect, flash, url_for, make_response
+from flask import render_template, redirect, flash, url_for, make_response, request
 from app import create_app
 from app.forms import SearchForm
 from app.database import get_all_cars, get_cars
@@ -30,6 +30,8 @@ def search_cars():
         'form': form,
         'cars': cars
     }
+    if request.method == 'POST' and form.validate_on_submit():
+        return redirect(url_for('carfilter', query=car))
     return render_template('carfilter.html', **context)
 
 @app.route('/car_list')
@@ -39,6 +41,10 @@ def carlist():
         'cars': cars
     }
     return render_template('carlist.html', **context)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
