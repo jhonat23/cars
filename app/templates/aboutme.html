@@ -24,27 +24,47 @@
     </div>
 
     <div class="container-fluid bg-2 text-center">
-        <h1>My work experience</h1>
-        <div class="row">
-            <div class="col-sm-4">
-            <h2>Scrum advisor</h2>
-            <p></p>
-            </div>
-            <div class="col-sm-4">
-            <h2>Python developer</>
-            <p></p>
-            </div>
-            <div class="col-sm-4">
-            <h2>Project manager</>
-            <ul>
-                <p>
-                <li>Implement an ERP for production plant, inventaries, cost accounting and commercial processes.</li>
-                </p>
-                <li>Create the I+D+i management system according to sustainability and growth policies.</li>
-                <li>Manage I+D+i, productive, photovoltaic and LV/MV projects using PMI and agile methods.</li>
-            </ul>
-            </div>
+    <h3>Work Experience</h3>
+    <div class="row">
+        <div class="col-sm-4">
+        <h3>Scrum advisor</h3>
+        <ul>
+            <li>Help groups of people to develop a web app based on teached contents and Scrum Metodology</li>
+            <li>Take the role of Scrum Master on each group and check the roles, artifacts and events of Scrum methodology</li>
+            <li>Report to process leader all news, issues and incidents through all project development</li>
+        </ul>
+        <img src="/static/images/Mintic.png" alt="MinTIC">
+        </div>
+        <div class="col-sm-4">
+        <h3>Python developer</h3>
+        <ul>
+            <li>Develop tools for managing business model using Python (web scrapping and API REST).</li>
+            <li>Achieve a business model for a regional technology ecommerce brand.</li>
+            <li>Formulate projects for public/private organizations in order to obtain funds and execute them.</li>
+        </ul>
+        <img src="/static/images/JJR.jpg" alt="JJR">
+        </div>
+        <div class="col-sm-4">
+        <h3>Project manager</h3>
+        <ul>
+            <li>Deploy an ERP for production plant, inventaries, cost accounting and commercial processes.</li>
+            <li>Create the I+D+i management system according to sustainability and growth policies.</li>
+            <li>Manage I+D+i, productive, photovoltaic and LV/MV projects using PMI and agile methods.</li>
+        </ul>
+        <img src="/static/images/gl_ingenieros32.jpg" alt="GL">
         </div>
     </div>
+    </div>
+    
+    <div class="container-fluid bg-2 text-center">
+        <h3>Contact me</h3>
+        <a href="https://www.linkedin.com/in/jonathan-osorio-22272187/?locale=en_US" class="btn btn-default btn-lg">LinkedIn profile</a>
+        <a href="https://github.com/jhonat23" class="btn btn-default btn-lg">GitHub Profile</a>
+        <a href="https://wa.me/573007270108" class="btn btn-default btn-lg">Whatsapp</a>
+    </div>
+
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock footer %}
 
 {% endblock body %}
