@@ -44,9 +44,13 @@ def carlist():
     }
     return render_template('carlist.html', **context)
 
-@app.route('/about')
+@app.route('/about/project')
 def about():
     return render_template('about.html')
+
+@app.route('/about/me')
+def about_me():
+    return render_template('aboutme.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

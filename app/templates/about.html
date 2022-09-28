@@ -3,9 +3,56 @@
 {% block body %}
     {{ super() }}
 
-    <div class='cen'>
-        <h1>This app is developed for work and educational purposes, it shows a database of cars and thier sellers with geographical coordinates. It focused for colombian market and have in total 30 cars and 3 sellers. If you want to know more about this project you can check it on GitHub (link below)</h1>
-
-        <a href="https://github.com/jhonat23/cars">GitHub Repo</a>
+    <div class="jumbotron">
+        <h1 class='cen'>About this app</h1>
+        <div>
+            <p>This app is developed for work and educational purposes, it shows a database of cars and their sellers with geographical coordinates. It is focused for colombian market and have in total 30 cars and 3 sellers. If you want to know more about this project you can check it on GitHub (link below). This project will be changing over time adding new features and technologies, also will be deploying on several web services like render, google cloud (App Engine), GitHub pages and others. Please feel free to share your issues sending a email to joosorio@utp.edu.co</p>
+            <h2 class='cen'>Tools on this project:</h2>
+            <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Programming Language</th>
+                    <td>Python</td>
+                    <td>3.8.10</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Framework</th>
+                    <td>Flask</td>
+                    <td>2.2.2</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Toolkit</th>
+                    <td>SQLAlchemy</td>
+                    <td>1.4.41</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Relational Database</th>
+                    <td>MySQL</td>
+                    <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div>
+                <p class='cen'><a class="btn btn-primary btn-lg" href="https://github.com/jhonat23/cars" role="button">GitHub Repo</a></p>
+            </div>
+            <div>
+                <img class='carro' src="/static/images/mazda-3.jpg" alt="mazda3" style="width:100%">
+            </div>
+        </div>
     </div>
+
+
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock footer %}
+    
 {% endblock body %}

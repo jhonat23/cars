@@ -5,3 +5,23 @@
 #text {
     text-align: center;
 }
+
+.bg-1 {
+    background-color: rgba(226,226,226,1);
+    color: black;
+  }
+
+.bg-2 {
+  background-color: white;
+  color: black;
+}
+
+.bg-3 {
+    background-color: rgba(226,226,226,1);
+    color: black;
+  }
+
+.container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
